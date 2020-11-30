@@ -69,7 +69,22 @@ function startRenderer () {
           ctx.middleware.waitUntilValid(() => {
             resolve()
           })
-        }
+        },
+        proxy: {
+          '/api': {
+            // 请求的目标服务器地址
+            target: 'http://127.0.0.1:8081/',
+            // 设置允许跨域
+            changeOrigin: true,
+            // 重写路径
+            pathRewrite: {
+              '^/api': ''
+            },
+            headers: {
+              referer: ''
+            }
+          }
+        },
       }
     )
 
