@@ -54,6 +54,7 @@
   "dependencies": {
     "ant-design-vue": "^1.7.2",
     "axios": "^0.18.0",
+    "d3-selection": "^2.0.0",
     "element-ui": "^2.14.1",
     "view-design": "^4.4.0",
     "vue": "^2.5.16",

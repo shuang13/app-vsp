@@ -1,16 +1,20 @@
 <template>
-    <Tabs class="i-tab" type="card" closable :animated="false" :draggable="true" @on-tab-remove="handleTabRemove" @on-drag-drop="handleDragDrop">
+    <Tabs :value="activeTab" class="i-tab" type="card" closable :animated="false" :draggable="true" @on-tab-remove="handleTabRemove" @on-drag-drop="handleDragDrop">
         <TabPane class="i-tabPane" v-for="(tab, index) in tabList" :key="index" :label="tab.label" :name="tab.name">
             <div class="tab-inner">
                 {{ tab.label }}
+                <FlowSheet></FlowSheet>
             </div>
         </TabPane>
     </Tabs>
 </template>
 <script>
+    import FlowSheet from './FlowSheet'
     export default {
+        name: 'TabList',
         data () {
             return {
+                activeTab: 'name2',
                 tabList: [
                     {
                         label: '标签一',
@@ -27,6 +31,9 @@
                 ]
             }
         },
+        components: {
+            FlowSheet
+        },
         methods: {
             handleTabRemove (name) {
                 this['tab' + name] = false;
@@ -35,6 +42,9 @@
                 // names 为调整后的 name 集合
                 this.tabList.splice(b, 1, ...this.tabList.splice(a, 1, this.tabList[b]));
             }
+        },
+        mounted () {
+            console.log(this.activeTab, "22")
         }
     }
 </script>
