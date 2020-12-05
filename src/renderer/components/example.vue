@@ -1,34 +1,40 @@
 <template>
-	<div class="basicMain">
-        <TabList></TabList> 
+	<div class="">
+		
 	</div>
 </template>
 
 <script>
-import TabList from './TabList'
+import * from './'
 export default {
-	name: 'basicMain',
+	name: '',
     data() {
         return {
             
         }
     },
     components: {
-       	TabList,
+       	
+    },
+    created() {
+            
     },
     computed: {
     
     },
+    watch: {
+        
+    },
     methods: {
      
+    },
+    mounted() {
+    	
     }
 }
 </script>
 
 
-<style>
-.basicMain {
-    width: 100%;
-    height: 100%;
-}
+<style scoped>
+
 </style>

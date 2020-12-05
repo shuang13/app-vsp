@@ -3,36 +3,28 @@
         <TabPane class="i-tabPane" v-for="(tab, index) in tabList" :key="index" :label="tab.label" :name="tab.name">
             <div class="tab-inner">
                 {{ tab.label }}
-                <FlowSheet></FlowSheet>
+                <Flow ></Flow>
             </div>
         </TabPane>
     </Tabs>
 </template>
 <script>
-    import FlowSheet from './FlowSheet'
+    import Flow from '../Flow/Index'
     export default {
         name: 'TabList',
         data () {
             return {
-                activeTab: 'name2',
+                activeTab: 'name1',
                 tabList: [
                     {
                         label: '标签一',
                         name: 'name1'
-                    },
-                    {
-                        label: '标签二',
-                        name: 'name2'
-                    },
-                    {
-                        label: '标签三',
-                        name: 'name3'
                     }
-                ]
+                ]    
             }
         },
         components: {
-            FlowSheet
+            Flow
         },
         methods: {
             handleTabRemove (name) {
@@ -48,7 +40,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
 .i-tab {
     width: 100%;
     height: 100%;
